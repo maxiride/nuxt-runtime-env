@@ -8,11 +8,11 @@ EXPOSE 3000
 
 WORKDIR /app/frontend
 
-COPY /nuxt-runtime-env/package*.json /nuxt-runtime-env/nuxt.config.js ./
+COPY /package*.json /nuxt.config.js ./
 
 RUN npm install
 
-COPY /nuxt-runtime-env ./
+COPY . .
 
 RUN npm run build
 
