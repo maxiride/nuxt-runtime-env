@@ -43,8 +43,16 @@ export default {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    ['nuxt-env', {
+      keys: [
+        'API_BASE_URL',
+      ],
+    }],
   ],
+  env: {
+    baseUrl: process.env.API_BASE_URL,
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
